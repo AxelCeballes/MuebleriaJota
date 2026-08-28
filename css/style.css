@@ -47,8 +47,8 @@ a {
 .logo img {
   display: block;
   height: auto;
-  max-width: 180px;
-  width: 100%;
+  max-width: 120px;
+  width: 25%;
 }
 
 .nav {
