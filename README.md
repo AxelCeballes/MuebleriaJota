@@ -4,9 +4,9 @@ https://muebleria-jota-tawny.vercel.app/
 
 ## Integrantes
 -  Axel Ceballes
-- Integrante 2
-- Integrante 3
-- Integrante 4
+-  Tomas Fioravanti
+-  Francisco Ramirez
+-  Liam Rivera
 - Integrante 5
 
 ## Descripción
