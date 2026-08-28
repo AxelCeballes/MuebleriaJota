@@ -8,7 +8,7 @@ https://muebleria-jota-tawny.vercel.app/
 -  Francisco Ramirez
 -  Liam Rivera
 
-## Descripción
+## Descripción.
 E-commerce front-end para Hermanos Jota, desarrollado como proyecto académico utilizando únicamente HTML, CSS y JavaScript.
 
 El sitio simula una experiencia de compra sin backend, utilizando productos almacenados en un array de objetos JavaScript y localStorage para el carrito.
