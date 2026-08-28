@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+  --siena: #A0522D;
+  --salvia: #87A96B;
+  --alabastro: #F5E6D3;
+  --oro: #D4A437;
+  --rosa: #C47A6D;
+  --texto: #2c2926;
+  --blanco: #fffaf4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--alabastro);
+  color: var(--texto);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  align-items: center;
+  background: var(--alabastro);
+  border-bottom: 1px solid rgba(160, 82, 45, .2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 1.2rem;
+}
+
+.logo {
+  color: var(--siena);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.logo span {
+  font-weight: 400;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: .8rem;
+}
+
+.nav a:hover {
+  color: var(--siena);
+}
+
+.cart-link span {
+  background: var(--siena);
+  border-radius: 50%;
+  color: white;
+  display: inline-grid;
+  height: 22px;
+  place-items: center;
+  width: 22px;
+}
+
+.hero {
+  align-items: center;
+  background: linear-gradient(rgba(44, 41, 38, .42), rgba(44, 41, 38, .42)),
+               url("../img/Aparador Uspallata.png") center/cover;
+  color: white;
+  display: flex;
+  min-height: 75vh;
+  padding: 2rem 1.2rem;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.eyebrow {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  margin-bottom: .8rem;
+}
+
+.hero h1,
+.page-header h1,
+.detail-content h1,
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1.1;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  margin-bottom: 1.2rem;
+}
+
+.hero p:not(.eyebrow) {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.btn {
+  background: var(--siena);
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font: 500 .75rem "Inter", sans-serif;
+  letter-spacing: .08em;
+  padding: 1rem 1.3rem;
+  transition: transform .2s, opacity .2s;
+}
+
+.btn:hover {
+  opacity: .9;
+  transform: translateY(-2px);
+}
+
+.btn-small {
+  margin: 0 1rem 1rem;
+  padding: .75rem 1rem;
+}
+
+.section {
+  margin: auto;
+  max-width: 1200px;
+  padding: 5rem 1.2rem;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+}
+
+.section-heading h2,
+.sustainability h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.product-card {
+  background: var(--blanco);
+  border: 1px solid rgba(160, 82, 45, .12);
+  overflow: hidden;
+}
+
+.product-card a {
+  display: block;
+}
+
+.product-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.product-image img,
+.detail-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s;
+  width: 100%;
+}
+
+.product-card:hover img {
+  transform: scale(1.04);
+}
+
+.product-info {
+  padding: 1.2rem;
+}
+
+.category {
+  color: var(--siena);
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.product-info h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.4rem;
+}
+
+.price,
+.detail-price {
+  font-weight: 700;
+  margin-top: .5rem;
+}
+
+.sustainability {
+  background: var(--salvia);
+  color: #fff;
+  padding: 5rem 1.2rem;
+}
+
+.sustainability > div {
+  margin: auto;
+  max-width: 700px;
+}
+
+.text-link {
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.footer {
+  background: #302a25;
+  color: var(--alabastro);
+  display: grid;
+  gap: 1rem;
+  padding: 2.5rem 1.2rem;
+}
+
+.page-header {
+  background: var(--siena);
+  color: white;
+  padding: 5rem 1.2rem;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: .8rem;
+}
+
+.catalog-section {
+  min-height: 60vh;
+}
+
+.search-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+.search-input {
+  border: 1px solid rgba(44, 41, 38, .3);
+  background: var(--blanco);
+  font: inherit;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.product-detail {
+  display: grid;
+  gap: 2rem;
+  margin: auto;
+  max-width: 1200px;
+  padding: 3rem 1.2rem;
+}
+
+.detail-image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.detail-content {
+  align-self: center;
+}
+
+.detail-content h1 {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.detail-price {
+  color: var(--siena);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-content h3 {
+  margin: 2rem 0 .5rem;
+}
+
+.contact-section {
+  display: grid;
+  gap: 3rem;
+  margin: auto;
+  max-width: 1000px;
+  padding: 4rem 1.2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: var(--blanco);
+  border: 1px solid rgba(44, 41, 38, .25);
+  font: inherit;
+  margin-bottom: .8rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.contact-info {
+  background: var(--blanco);
+  padding: 2rem;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-message {
+  color: var(--salvia);
+  font-weight: 700;
+  margin-top: .8rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 1.3rem 4rem;
+  }
+
+  .hero {
+    padding: 4rem;
+  }
+
+  .section,
+  .contact-section,
+  .product-detail {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .sustainability {
+    padding: 7rem 4rem;
+  }
+
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 4rem;
+  }
+
+  .product-detail {
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    min-height: 75vh;
+  }
+
+  .contact-section {
+    grid-template-columns: 1.3fr .7fr;
+  }
+}
