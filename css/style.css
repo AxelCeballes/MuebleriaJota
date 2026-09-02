@@ -111,20 +111,16 @@ a {
 
 .hero {
   align-items: flex-end;
-  background: 
-    linear-gradient(
-      105deg,
+  background:
+    linear-gradient(105deg,
       rgba(35, 25, 20, 0.82) 0%,
       rgba(44, 41, 38, 0.6) 38%,
       rgba(44, 41, 38, 0.25) 65%,
-      rgba(44, 41, 38, 0.1) 100%
-    ),
-    linear-gradient(
-      0deg,
+      rgba(44, 41, 38, 0.1) 100%),
+    linear-gradient(0deg,
       rgba(25, 18, 14, 0.75) 0%,
       rgba(25, 18, 14, 0.3) 50%,
-      transparent 100%
-    ),
+      transparent 100%),
     url("../img/imagen-principal.jpg") center/cover no-repeat;
   border-radius: 12px;
   color: #ffffff;
@@ -198,6 +194,7 @@ h2 {
 
 .section-heading {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .section-heading h2,
@@ -215,6 +212,7 @@ h2 {
 .product-card {
   background: var(--blanco);
   border: 1px solid rgba(160, 82, 45, .12);
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -224,13 +222,23 @@ h2 {
 
 .product-image {
   aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  padding: 1rem;
 }
 
-.product-image img,
+.product-image img {
+  height: 100%;
+  object-fit: contain;
+  transition: transform .4s;
+  width: 100%;
+}
+
 .detail-image img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform .4s;
   width: 100%;
 }

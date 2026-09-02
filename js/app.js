@@ -11,30 +11,14 @@ const formatoPrecio = (precio) =>
     maximumFractionDigits: 0
   }).format(precio);
 
-function cargarProductos() {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(productos), 700);
-  });
-}
-
-async function cargarContenido() {
+function cargarContenido() {
   const grid = document.querySelector("#product-grid");
   const destacados = document.querySelector("#featured-products");
   const detalle = document.querySelector("#product-detail");
 
-  try {
-    const lista = await cargarProductos();
-
-    if (grid) renderProductos(lista, grid);
-
-    if (destacados) {
-      renderProductos(lista.filter((producto) => producto.destacado), destacados);
-    }
-
-    if (detalle) renderDetalle(lista, detalle);
-  } catch (error) {
-    console.error(error);
-  }
+  if (grid) renderProductos(productos, grid);
+  if (destacados) renderProductos(productos.filter((producto) => producto.destacado), destacados);
+  if (detalle) renderDetalle(productos, detalle);
 }
 
 function renderProductos(lista, contenedor) {
