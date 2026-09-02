@@ -33,10 +33,14 @@ a {
   background: var(--alabastro);
   border-bottom: 1px solid rgba(160, 82, 45, .2);
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   justify-content: space-between;
-  padding: 1.2rem;
+  padding: 0.9rem 1.2rem;
+}
+
+.header-left {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .logo {
@@ -46,30 +50,63 @@ a {
 
 .logo img {
   display: block;
-  height: auto;
-  max-width: 120px;
-  width: 25%;
+  height: 42px;
+  width: auto;
 }
 
 .nav {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  font-size: .8rem;
+  gap: 1.2rem;
 }
 
-.nav a:hover {
+.nav a {
+  color: var(--texto);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+
+.nav a:hover,
+.nav a.active {
   color: var(--siena);
 }
 
-.cart-link span {
-  background: var(--siena);
+.header-right {
+  align-items: center;
+  display: flex;
+}
+
+.cart-link {
+  align-items: center;
+  display: inline-flex;
+  position: relative;
+}
+
+.cart-icon {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.cart-badge {
+  align-items: center;
+  background: var(--salvia);
   border-radius: 50%;
-  color: white;
-  display: inline-grid;
-  height: 22px;
-  place-items: center;
-  width: 22px;
+  color: var(--blanco);
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 700;
+  height: 19px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: -8px;
+  top: -6px;
+  width: 19px;
 }
 
 .hero {
@@ -335,7 +372,15 @@ h2 {
 
 @media (min-width: 768px) {
   .header {
-    padding: 1.3rem 4rem;
+    padding: 1rem 4rem;
+  }
+  
+  .header-left {
+    gap: 3rem;
+  }
+  
+  .nav {
+    gap: 2rem;
   }
 
   .hero {
