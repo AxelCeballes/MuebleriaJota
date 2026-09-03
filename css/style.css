@@ -33,10 +33,14 @@ a {
   background: var(--alabastro);
   border-bottom: 1px solid rgba(160, 82, 45, .2);
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
   justify-content: space-between;
-  padding: 1.2rem;
+  padding: 0.9rem 1.2rem;
+}
+
+.header-left {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .logo {
@@ -46,44 +50,92 @@ a {
 
 .logo img {
   display: block;
-  height: auto;
-  max-width: 120px;
-  width: 25%;
+  height: 42px;
+  width: auto;
 }
 
 .nav {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  font-size: .8rem;
+  gap: 1.2rem;
 }
 
-.nav a:hover {
+.nav a {
+  color: var(--texto);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color .2s;
+}
+
+.nav a:hover,
+.nav a.active {
   color: var(--siena);
 }
 
-.cart-link span {
-  background: var(--siena);
+.header-right {
+  align-items: center;
+  display: flex;
+}
+
+.cart-link {
+  align-items: center;
+  display: inline-flex;
+  position: relative;
+}
+
+.cart-icon {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+.cart-badge {
+  align-items: center;
+  background: var(--salvia);
   border-radius: 50%;
-  color: white;
-  display: inline-grid;
-  height: 22px;
-  place-items: center;
-  width: 22px;
+  color: var(--blanco);
+  display: flex;
+  font-size: 0.72rem;
+  font-weight: 700;
+  height: 19px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: -8px;
+  top: -6px;
+  width: 19px;
 }
 
 .hero {
-  align-items: center;
-  background: linear-gradient(rgba(44, 41, 38, .42), rgba(44, 41, 38, .42)),
-               url("../img/Aparador Uspallata.png") center/cover;
-  color: white;
+  align-items: flex-end;
+  background:
+    linear-gradient(105deg,
+      rgba(35, 25, 20, 0.82) 0%,
+      rgba(44, 41, 38, 0.6) 38%,
+      rgba(44, 41, 38, 0.25) 65%,
+      rgba(44, 41, 38, 0.1) 100%),
+    linear-gradient(0deg,
+      rgba(25, 18, 14, 0.75) 0%,
+      rgba(25, 18, 14, 0.3) 50%,
+      transparent 100%),
+    url("../img/imagen-principal.jpg") center/cover no-repeat;
+  border-radius: 12px;
+  color: #ffffff;
   display: flex;
-  min-height: 75vh;
-  padding: 2rem 1.2rem;
+  margin: 1.2rem auto 0;
+  max-width: 1320px;
+  min-height: 68vh;
+  overflow: hidden;
+  padding: 2.5rem 1.5rem;
+  width: calc(100% - 2.4rem);
 }
 
 .hero-content {
-  max-width: 720px;
+  max-width: 680px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .eyebrow {
@@ -142,6 +194,7 @@ h2 {
 
 .section-heading {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .section-heading h2,
@@ -159,6 +212,7 @@ h2 {
 .product-card {
   background: var(--blanco);
   border: 1px solid rgba(160, 82, 45, .12);
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -168,13 +222,23 @@ h2 {
 
 .product-image {
   aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  padding: 1rem;
 }
 
-.product-image img,
+.product-image img {
+  height: 100%;
+  object-fit: contain;
+  transition: transform .4s;
+  width: 100%;
+}
+
 .detail-image img {
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform .4s;
   width: 100%;
 }
@@ -211,7 +275,7 @@ h2 {
   padding: 5rem 1.2rem;
 }
 
-.sustainability > div {
+.sustainability>div {
   margin: auto;
   max-width: 700px;
 }
@@ -335,11 +399,23 @@ h2 {
 
 @media (min-width: 768px) {
   .header {
-    padding: 1.3rem 4rem;
+    padding: 1rem 4rem;
+  }
+
+  .header-left {
+    gap: 3rem;
+  }
+
+  .nav {
+    gap: 2rem;
   }
 
   .hero {
-    padding: 4rem;
+    border-radius: 16px;
+    margin: 2rem auto 0;
+    min-height: 72vh;
+    padding: 4.5rem 4rem;
+    width: calc(100% - 4rem);
   }
 
   .section,

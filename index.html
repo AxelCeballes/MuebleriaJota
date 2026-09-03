@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,25 @@
   <title>Hermanos Jota | Muebles con historia</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <header class="header">
-    <a class="logo" href="index.html" aria-label="Hermanos Jota - Inicio"><img src="img/logo.svg" alt="Hermanos Jota"></a>
-    <nav class="nav">
-      <a href="index.html">Inicio</a>
-      <a href="productos.html">Catálogo</a>
-      <a href="contacto.html">Contacto</a>
-      <a class="cart-link" href="productos.html">Carrito <span id="cart-count">0</span></a>
-    </nav>
+    <div class="header-left">
+      <a class="logo" href="index.html" aria-label="Hermanos Jota - Inicio">
+        <img src="img/logo.svg" alt="Hermanos Jota">
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="productos.html">Catálogo</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <a class="cart-link" href="productos.html" aria-label="Ver carrito de compras">
+        <img src="img/logo-compras.png" alt="Carrito de compras" class="cart-icon">
+        <span id="cart-count" class="cart-badge">0</span>
+      </a>
+    </div>
   </header>
 
   <main>
@@ -44,7 +55,8 @@
       <div>
         <p class="eyebrow">NUESTRO COMPROMISO</p>
         <h2>Diseñar pensando en mañana.</h2>
-        <p>Priorizamos maderas certificadas, proveedores locales y acabados naturales. Cada pieza busca durar, repararse y acompañarte durante años.</p>
+        <p>Priorizamos maderas certificadas, proveedores locales y acabados naturales. Cada pieza busca durar, repararse
+          y acompañarte durante años.</p>
         <a class="text-link" href="productos.html">Conocé nuestra colección →</a>
       </div>
     </section>
@@ -65,4 +77,5 @@
   <script src="js/productos.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
