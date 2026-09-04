@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
-  <title>Catálogo | Hermanos Jota</title>
+  <title>Carrito | Hermanos Jota</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +15,7 @@
       </a>
       <nav class="nav">
         <a href="index.html">Inicio</a>
-        <a href="productos.html" class="active">Catálogo</a>
+        <a href="productos.html">Catálogo</a>
         <a href="contacto.html">Contacto</a>
       </nav>
     </div>
@@ -29,17 +29,28 @@
 
   <main>
     <section class="page-header">
-      <p class="eyebrow">COLECCIÓN 2026</p>
-      <h1>Catálogo</h1>
-      <p>Objetos para vivir espacios con carácter.</p>
+      <p class="eyebrow">TU SELECCIÓN</p>
+      <h1>Carrito</h1>
+      <p>Revisá tus piezas antes de continuar.</p>
     </section>
 
-    <section class="section catalog-section">
-      <label class="search-label" for="search">Buscar producto</label>
-      <input id="search" class="search-input" type="search" placeholder="Ej: sillón, mesa, silla...">
-      <div id="product-grid" class="product-grid">
-        <p>Cargando catálogo...</p>
+    <section class="cart-section">
+      <div id="cart-items" class="cart-list">
+        <p>Cargando carrito...</p>
       </div>
+      <aside class="cart-summary">
+        <h2>Resumen</h2>
+        <p class="cart-summary-row">
+          <span>Unidades</span>
+          <span id="cart-summary-count">0</span>
+        </p>
+        <p class="cart-summary-total">
+          <span>Total</span>
+          <span id="cart-total">$0</span>
+        </p>
+        <button id="cart-clear" class="btn-outline">VACIAR CARRITO</button>
+        <p id="cart-message" class="form-message" aria-live="polite"></p>
+      </aside>
     </section>
   </main>
 
