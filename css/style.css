@@ -209,6 +209,10 @@ h2 {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
+#featured-products {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
 .catalog-status {
   grid-column: 1 / -1;
   padding: 3rem 1.5rem;
