@@ -206,7 +206,32 @@ h2 {
 .product-grid {
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.catalog-status {
+  grid-column: 1 / -1;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.catalog-loading {
+  color: var(--texto);
+  opacity: .75;
+  font-style: italic;
+}
+
+.catalog-error {
+  background: var(--blanco);
+  border: 1px solid rgba(196, 122, 109, .4);
+  border-radius: 8px;
+  color: var(--rosa);
+  margin: 1rem 0;
+}
+
+.catalog-error p {
+  margin-bottom: 1rem;
 }
 
 .product-card {
@@ -284,6 +309,13 @@ h2 {
   border-bottom: 1px solid currentColor;
   display: inline-block;
   margin-top: 1.5rem;
+  transition: color .2s ease, transform .2s ease, opacity .2s ease;
+}
+
+.text-link:hover {
+  color: var(--alabastro);
+  opacity: .95;
+  transform: translateX(4px);
 }
 
 .footer {

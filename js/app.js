@@ -11,14 +11,56 @@ const formatoPrecio = (precio) =>
     maximumFractionDigits: 0
   }).format(precio);
 
-function cargarContenido() {
+function cargarProductos(simularFallo = false) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (simularFallo) {
+        reject(new Error("No se pudo conectar con el catálogo de Hermanos Jota. Intente nuevamente más tarde."));
+      } else {
+        resolve([...productos]);
+      }
+    }, 400);
+  });
+}
+
+async function cargarContenido() {
   const grid = document.querySelector("#product-grid");
   const destacados = document.querySelector("#featured-products");
   const detalle = document.querySelector("#product-detail");
 
-  if (grid) renderProductos(productos, grid);
-  if (destacados) renderProductos(productos.filter((producto) => producto.destacado), destacados);
-  if (detalle) renderDetalle(productos, detalle);
+  const mensajeCarga = '<p class="catalog-status catalog-loading" aria-live="polite">Cargando catálogo...</p>';
+  if (grid) grid.innerHTML = mensajeCarga;
+  if (destacados) destacados.innerHTML = mensajeCarga;
+  if (detalle) detalle.innerHTML = '<p class="catalog-status catalog-loading" aria-live="polite">Cargando producto...</p>';
+
+  try {
+    const listaProductos = await cargarProductos();
+
+    if (grid) renderProductos(listaProductos, grid);
+    if (destacados) renderProductos(listaProductos.filter((producto) => producto.destacado), destacados);
+    if (detalle) renderDetalle(listaProductos, detalle);
+  } catch (error) {
+    console.error("Error al cargar productos:", error);
+    const mensajeError = `
+      <div class="catalog-status catalog-error" role="alert">
+        <p>${error.message || "Ocurrió un error al cargar el catálogo."}</p>
+        <button class="btn btn-small" id="btn-retry">Reintentar</button>
+      </div>
+    `;
+
+    if (grid) {
+      grid.innerHTML = mensajeError;
+      grid.querySelector("#btn-retry")?.addEventListener("click", () => cargarContenido());
+    }
+    if (destacados) {
+      destacados.innerHTML = mensajeError;
+      destacados.querySelector("#btn-retry")?.addEventListener("click", () => cargarContenido());
+    }
+    if (detalle) {
+      detalle.innerHTML = mensajeError;
+      detalle.querySelector("#btn-retry")?.addEventListener("click", () => cargarContenido());
+    }
+  }
 }
 
 function renderProductos(lista, contenedor) {
@@ -52,12 +94,12 @@ function renderProductos(lista, contenedor) {
     buscador.dataset.ready = "true";
     buscador.addEventListener("input", (evento) => {
       const termino = evento.target.value.toLowerCase().trim();
-      const filtrados = productos.filter((producto) =>
+      const filtrados = lista.filter((producto) =>
         `${producto.nombre} ${producto.categoria} ${producto.descripcion}`
           .toLowerCase()
           .includes(termino)
       );
-      renderProductos(filtrados, grid);
+      renderProductos(filtrados, contenedor);
     });
   }
 }
