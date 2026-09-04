@@ -323,11 +323,101 @@ h2 {
 }
 
 .footer {
-  background: #302a25;
+  background: #241e1b;
   color: var(--alabastro);
-  display: grid;
-  gap: 1rem;
-  padding: 2.5rem 1.2rem;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  /* tighter spacing */
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  /* center child divs */
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.footer-logo-img {
+  display: block;
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(94%) sepia(12%) saturate(452%) hue-rotate(346deg) brightness(102%) contrast(92%);
+}
+
+.footer-title {
+  color: var(--alabastro);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-text {
+  color: rgba(245, 230, 211, 0.82);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-heading {
+  color: var(--alabastro);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.footer-link,
+.footer-link-static {
+  align-items: center;
+  color: rgba(245, 230, 211, 0.88);
+  display: inline-flex;
+  font-size: 0.9rem;
+  gap: 0.65rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--oro);
+  transform: translateX(3px);
+}
+
+.footer-icon {
+  fill: currentColor;
+  flex-shrink: 0;
+  height: 18px;
+  width: 18px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(245, 230, 211, 0.14);
+  color: rgba(245, 230, 211, 0.7);
+  font-size: 0.82rem;
+  margin: 3rem auto 0;
+  max-width: 1200px;
+  padding-top: 1.8rem;
+  text-align: center;
 }
 
 .page-header {
@@ -345,6 +435,23 @@ h2 {
 .catalog-section {
   min-height: 60vh;
 }
+
+/* Catalog loading/error status */
+.catalog-status {
+  text-align: center;
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  color: var(--texto);
+}
+
+.catalog-loading {
+  opacity: 0.85;
+}
+
+.catalog-error {
+  color: var(--rosa);
+}
+
 
 .search-label {
   display: block;
@@ -466,8 +573,14 @@ h2 {
   }
 
   .footer {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 3rem 4rem;
+    padding: 5rem 4rem 2.5rem;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
   }
 
   .product-detail {
