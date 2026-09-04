@@ -332,11 +332,9 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 1.8rem;
-  /* tighter spacing */
   margin: 0 auto;
   max-width: 1200px;
   align-items: center;
-  /* center child divs */
 }
 
 .footer-brand {

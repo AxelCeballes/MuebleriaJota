@@ -1,61 +1,94 @@
-# Hermanos Jota — E-commerce
+# 🪑 Hermanos Jota — E-commerce
 
-https://muebleria-jota-tawny.vercel.app/
+E-commerce frontend desarrollado para **Hermanos Jota**, una mueblería ficticia creada como proyecto académico.
 
-## Integrantes
--  Axel Ceballes
--  Tomas Fioravanti
--  Francisco Ramirez
--  Lian Rivera
+El proyecto busca simular una experiencia de compra completa utilizando exclusivamente **HTML, CSS y JavaScript**, sin backend ni frameworks externos.
 
-## Descripción.
-E-commerce front-end para Hermanos Jota, desarrollado como proyecto académico utilizando únicamente HTML, CSS y JavaScript.
+### 🌐 Demo
 
-El sitio simula una experiencia de compra sin backend, utilizando productos almacenados en un array de objetos JavaScript y localStorage para el carrito.
+**[Ver sitio web](https://muebleria-jota-tawny.vercel.app/)**
 
-## Funcionalidades
-- Página de inicio.
-- Catálogo dinámico.
-- Búsqueda de productos.
-- Detalle individual de producto.
-- Carrito simulado.
-- Contador del carrito.
-- Formulario de contacto con validación.
-- Carga asíncrona simulada con Promise y setTimeout.
-- Diseño responsive Mobile First.
+---
 
-## Tecnologías
-- HTML5
-- CSS3
-- JavaScript
-- Git
-- GitHub
-- GitHub Pages
+## 📖 Descripción
 
-## Estructura
-- `index.html`
-- `productos.html`
-- `producto.html`
-- `contacto.html`
-- `css/style.css`
-- `js/productos.js`
-- `js/app.js`
-- `img/`
+**Hermanos Jota** es un e-commerce frontend orientado a la venta de muebles y productos para el hogar.
 
-## Marca
-El diseño utiliza la identidad visual indicada en el Manual de Marca de Hermanos Jota:
-- Siena Tostado: #A0522D
-- Verde Salvia: #87A96B
-- Alabastro Cálido: #F5E6D3
-- Vara de Oro: #D4A437
-- Rosa Polvoriento: #C47A6D
+El sitio permite navegar por un catálogo dinámico, consultar información detallada de cada producto y gestionar un carrito de compras.
 
-Tipografías:
-- Inter
-- Playfair Display
+---
 
-## Logo
+## ✨ Funcionalidades
 
-25mm de ancho mínimo
-DIGITAL
-120px de ancho mínimo
+* 🏠 Página de inicio.
+* 🛋️ Catálogo dinámico de productos.
+* 🔎 Búsqueda de productos.
+* 📦 Visualización del detalle de cada producto.
+* 🛒 Carrito de compras simulado.
+* 🔢 Contador de productos en el carrito.
+* 📩 Formulario de contacto.
+* 📱 Diseño responsive.
+
+---
+
+## 🛠️ Tecnologías
+
+| Tecnología | Uso                          |
+| ---------- | ---------------------------- |
+| HTML5      | Estructura y contenido       |
+| CSS3       | Diseño, estilos y responsive |
+| JavaScript | Lógica e interactividad      |
+
+---
+
+## 📁 Estructura del proyecto
+
+```text
+MuebleriaJota/
+│
+├── index.html
+├── productos.html
+├── producto.html
+├── contacto.html
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── productos.js
+│   └── app.js
+│
+└── img/
+```
+
+---
+
+## 🎨 Identidad visual
+
+El diseño del sitio se basa en la identidad visual definida para **Hermanos Jota**.
+
+### Paleta de colores
+
+| Color            | Código    |
+| ---------------- | --------- |
+| Siena Tostado    | `#A0522D` |
+| Verde Salvia     | `#87A96B` |
+| Alabastro Cálido | `#F5E6D3` |
+| Vara de Oro      | `#D4A437` |
+| Rosa Polvoriento | `#C47A6D` |
+
+### Tipografías
+
+* **Inter**
+* **Playfair Display**
+
+---
+
+## 👥 Integrantes
+
+Proyecto desarrollado por:
+
+* **Axel Ceballes**
+* **Tomás Fioravanti**
+* **Francisco Ramírez**
+* **Lian Rivera**
