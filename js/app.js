@@ -12,20 +12,15 @@ const formatoPrecio = (precio) =>
     maximumFractionDigits: 0
   }).format(precio);
 
-function cargarContenido() {
-  const grid = document.querySelector("#product-grid");
-  const destacados = document.querySelector("#featured-products");
-  const detalle = document.querySelector("#product-detail");
-  const carritoContenedor = document.querySelector("#cart-items");
-
-  if (grid) {
-    renderProductos(productos, grid);
-    configurarBusqueda(grid);
-  }
-  if (destacados) renderProductos(seleccionarDestacados(productos), destacados);
-  if (detalle) renderDetalle(productos, detalle);
-  if (carritoContenedor) renderCarrito();
+async function obtenerProductos() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productos);
+    }, 400);
+  });
 }
+
+
 
 function seleccionarDestacados(lista, cantidad = 4) {
   return [...lista]
@@ -68,14 +63,14 @@ function normalizarTexto(texto) {
     .replace(/[\u0300-\u036f]/g, "");
 }
 
-function configurarBusqueda(contenedor) {
+function configurarBusqueda(contenedor, listaProductos) {
   const buscador = document.querySelector("#search");
   if (!buscador || buscador.dataset.ready) return;
 
   buscador.dataset.ready = "true";
   buscador.addEventListener("input", (evento) => {
     const termino = normalizarTexto(evento.target.value.trim());
-    const filtrados = productos.filter((producto) =>
+    const filtrados = listaProductos.filter((producto) =>
       normalizarTexto(`${producto.nombre} ${producto.categoria} ${producto.descripcion}`)
         .includes(termino)
     );
@@ -164,6 +159,41 @@ function vaciarCarrito() {
   localStorage.setItem("carritoHermanosJota", JSON.stringify([]));
   actualizarCarrito();
   renderCarrito();
+}
+
+async function cargarContenido() {
+  const grid = document.querySelector("#product-grid");
+  const destacados = document.querySelector("#featured-products");
+  const detalle = document.querySelector("#product-detail");
+  const carritoContenedor = document.querySelector("#cart-items");
+  const loadingEl = document.getElementById("loading");
+  const errorEl = document.getElementById("error-message");
+  if (loadingEl) loadingEl.hidden = false;
+  if (errorEl) errorEl.hidden = true;
+
+  try {
+    const productos = await obtenerProductos();
+    if (loadingEl) loadingEl.hidden = true;
+    if (grid) {
+      renderProductos(productos, grid);
+      configurarBusqueda(grid, productos);
+    }
+    if (destacados) renderProductos(seleccionarDestacados(productos), destacados);
+    if (detalle) renderDetalle(productos, detalle);
+    if (carritoContenedor) renderCarrito();
+  } catch (err) {
+    if (loadingEl) loadingEl.hidden = true;
+    if (errorEl) {
+      errorEl.hidden = false;
+      errorEl.textContent = err.message + " ";
+      const retryBtn = document.createElement("button");
+      retryBtn.textContent = "Reintentar";
+      retryBtn.className = "btn btn-small";
+      retryBtn.addEventListener("click", () => cargarContenido());
+      errorEl.appendChild(retryBtn);
+    }
+    console.error(err);
+  }
 }
 
 function renderCarrito() {

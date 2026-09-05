@@ -208,7 +208,7 @@ h2 {
 .product-grid {
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
 .product-card {
@@ -297,9 +297,112 @@ h2 {
 .footer {
   background: #302a25;
   color: var(--alabastro);
+  padding: 3rem 1.2rem 1.5rem;
+}
+
+/* Footer detailed styles */
+.footer-container {
   display: grid;
-  gap: 1rem;
-  padding: 2.5rem 1.2rem;
+  gap: 2.5rem;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.footer-brand,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo-img {
+  max-width: 50px;
+  margin-bottom: 0.8rem;
+  opacity: 0.9;
+}
+
+.footer-title {
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--alabastro);
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.footer-text {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.88rem;
+  color: rgba(245, 230, 211, 0.75);
+}
+
+.footer-heading {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--alabastro);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-link {
+  color: rgba(245, 230, 211, 0.85);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--alabastro);
+}
+
+.footer-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.footer-link-static {
+  color: rgba(245, 230, 211, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(245, 230, 211, 0.15);
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(245, 230, 211, 0.6);
+}
+
+.footer-bottom p {
+  margin: 0;
 }
 
 .page-header {
